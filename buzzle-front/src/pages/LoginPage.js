@@ -5,27 +5,14 @@ import Header from '../components/Header.js';
 import LoginForm from '../components/LoginForm.js';
 import Footer from '../components/Footer.js';
 
-function LoginPage(props) {
-    const error = props.error;
-    const user = props.user;
-
-    const handleError = props.handleError;
-    const handleUserLogin = props.handleUserLogin;
-    return (
+const LoginPage = () =>
         <> 
-            <Header user={user} />
+            <Header />
             <main className="container">
-                {error &&
-                    <Error error={error} />
-                }                
-                <LoginForm 
-                    user={user} 
-                    handleError={handleError}  
-                    handleLogin={handleUserLogin} />
+                <Error />
+                <LoginForm />
             </main>
             <Footer />
         </>
-    );
-}
 
 export default LoginPage;

@@ -12,8 +12,7 @@ class Message extends React.Component {
     }
 
     handleContentChange = event => {
-        this.setState({
-            'content': event.target.value
+        this.setState({ 'content': event.target.value
         });
     }
 

@@ -6,34 +6,14 @@ import MessageForm from '../components/MessageForm.js';
 import Messages from '../components/Messages.js';
 import Footer from '../components/Footer.js';
 
-function HomePage(props) {
-    const error = props.error;    
-    const user = props.user;
-    const messages = props.messages;
-
-    const handleError = props.handleError;
-    const handleMessageCreate = props.handleMessageCreate;
-    const handleMessageEdit = props.handleMessageEdit;
-    const handleMessageDelete = props.handleMessageDelete;
-
+function HomePage() {
     return (
         <> 
-            <Header showUserToolbar={true} user={user} />
+            <Header showUserToolbar={true} />
             <main className="container">
-                {error &&
-                    <Error error={error} />
-                }
-                {(user && user.authorized) &&
-                    <MessageForm 
-                        handleError={handleError} 
-                        handleMessageCreate={handleMessageCreate} />
-                }
-                <Messages 
-                    user={user} 
-                    messages={messages}
-                    handleError={handleError} 
-                    handleMessageEdit={handleMessageEdit} 
-                    handleMessageDelete={handleMessageDelete} />
+                <Error />
+                 <MessageForm />
+                <Messages />
             </main>
             <Footer />
         </>
