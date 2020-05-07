@@ -30,6 +30,6 @@ export const createMessageForm = (state = { 'content': '' }, action) => {
         case actions.UNLOAD_CREATE_MESSAGE_FORM:
             return { 'content': '' };
         default:
-           return state;
+            return state;
     }
 };

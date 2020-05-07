@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcryptjs';
 
 function users(parameters, server, database) {
     server.get('/login', (req, res) => {
@@ -66,17 +66,18 @@ function users(parameters, server, database) {
             response.status(503).end('Service Unavailable');
         });
     });
+
     server.get('/user', (req, res) => {
-        res.format({            
+        res.format({
             'application/json': () => {
                 if (req.session.authorized) {
                     res.json({
-                            'user': {
-                                'id': user.id,
-                                'login': req.session.login,
-                                'authorized': req.session.authorized,
-                                'administrator': req.session.administrator
-                            }
+                        'user': {
+                            'id': req.session.userID,
+                            'login': req.session.login,
+                            'authorized': req.session.authorized,
+                            'administrator': req.session.administrator
+                        }
                     });
                 } else {
                     res.json({
@@ -85,8 +86,8 @@ function users(parameters, server, database) {
                 }
             }
         });
-            
     });
+
     server.post('/logout', (req, res) => {
         req.session.regenerate(() => {
             res.format({

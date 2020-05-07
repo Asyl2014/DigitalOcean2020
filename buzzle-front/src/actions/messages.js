@@ -2,7 +2,7 @@ import parameters from '../parameters.js';
 import * as actions from './types.js';
 import { setError } from './error.js';
 
-export const loadMessages = ()=> {
+export const loadMessages = () => {
     return dispatch => {
         fetch(`${parameters.apiURL}/messages`, {
             'method': 'GET',
@@ -70,14 +70,14 @@ export const editMessage = (id, content, onSuccess) => {
           .then(response => response.json())
           .then(data => {
               if (data.error) {
-                 dispatch(setError(data.error));
+                  dispatch(setError(data.error));
               } else {
-                    dispatch(finishEditingMessage(data.message));
-                    onSuccess();
+                  dispatch(finishEditingMessage(data.message));
+                  onSuccess();
               }
           })
           .catch(error => {
-             dispatch(setError(data.error));
+              dispatch(setError(`${error}`));
           });
     }
 }

@@ -1,21 +1,18 @@
 import React from 'react';
 
-import Error from '../components/Error.js';
-import Header from '../components/Header.js';
-import RegisterForm from '../RegisterForm.js';
-import Footer from '../components/Footer.js';
+import Header from '../containers/Header.js';
+import Error from '../containers/Error.js';
+import RegisterForm from '../containers/RegisterForm.js';
+import Footer from '../containers/Footer.js';
 
-function RegisterPage() {
-    return (
-        <> 
-            <Header />
-            <main className="container">
+const RegisterPage = () =>
+    <>
+        <Header />
+        <main className="container">
             <Error />
             <RegisterForm />
-            </main>
-            <Footer />
-        </>
-    );
-}
+        </main>
+        <Footer />
+    </>
 
 export default RegisterPage;

@@ -1,7 +1,7 @@
 {
   "name": "buzzle",
   "version": "1.0.0",
-  "description": "Buzzle is a better clone of Twitter.",
+  "description": "Buzzle is a simple clone of Twitter.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

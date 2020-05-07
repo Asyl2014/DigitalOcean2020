@@ -1,12 +1,11 @@
 import express from 'express';
 import session from 'express-session';
-import connectRedis from 'connect-redis';
+import connectRedit from 'connect-redis';
 import moment from 'moment';
-
 
 function serverBuilder(parameters, database) {
     const server = express();
-    const RedisStore = connectRedis(session);
+    const RedisStore = connectRedit(session);
 
     server.use(express.static('public'));
     server.use(express.json());
@@ -20,9 +19,9 @@ function serverBuilder(parameters, database) {
     }));
     server.locals.moment = moment;
     server.handleError = (req, res, data) => {
-        const error = data.error || "Something went wrong.";
+        const error = data.error || 'Something went wrong.';
         res.format({
-            "text/html": () => {
+            'text/html': () => {
                 req.session.error = error;
                 if (data.redirect) {
                     res.redirect(data.redirect);
@@ -30,7 +29,7 @@ function serverBuilder(parameters, database) {
                     res.status(400).end('Bad Request');
                 }
             },
-            "application/json": () => {
+            'application/json': () => {
                 res.status(400).json({ error });
             }
         });

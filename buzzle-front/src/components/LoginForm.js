@@ -1,15 +1,24 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Redirect } from 'react-router';
 
 
 class LoginForm extends React.Component {
 
+=======
+import { Redirect } from "react-router";
+
+class LoginForm extends React.Component {
+>>>>>>> 2667221132704740c4ff83a8469713a301774162
     componentWillUnmount() {
         this.props.unloadLoginForm();
         this.props.clearError();
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2667221132704740c4ff83a8469713a301774162
     handleChange = event => {
         this.props.updateLoginForm(event.target.name, event.target.value);
     }
@@ -45,7 +54,11 @@ class LoginForm extends React.Component {
                                 className="form-control"
                                 name="login"
                                 type="text"
+<<<<<<< HEAD
                                onChange={this.handleChange}
+=======
+                                onChange={this.handleChange}
+>>>>>>> 2667221132704740c4ff83a8469713a301774162
                                 value={login}
                                 required />
                         </div>
@@ -68,4 +81,8 @@ class LoginForm extends React.Component {
     }
 }
 
+<<<<<<< HEAD
 export default LoginForm;
+=======
+export default LoginForm;
+>>>>>>> 2667221132704740c4ff83a8469713a301774162

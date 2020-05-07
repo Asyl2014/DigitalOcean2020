@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {
   Switch,
-  Route,
+  Route
 } from "react-router";
 
-import { loadUser } from './actions/user.js'
+import { loadUser } from './actions/user.js';
 
 import LoginPage from './pages/LoginPage.js';
 import RegisterPage from './pages/RegisterPage.js';
@@ -17,14 +17,14 @@ class App extends React.Component {
     }
 
     render() {
-        return (         
+        return (
             <Switch>
                 <Route path="/login">
                     <LoginPage />
                 </Route>
-                <Route path="/register">                    
-                    <RegisterPage /> 
-                    </Route>
+                <Route path="/register">
+                    <RegisterPage />
+                </Route>
                 <Route path="/">
                     <HomePage />
                 </Route>
@@ -34,7 +34,7 @@ class App extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    'loadUser': () => dispatch(loadUser()),
+    'loadUser': () => dispatch(loadUser())
 });
 
 export default connect(

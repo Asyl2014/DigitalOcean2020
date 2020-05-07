@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 import bcrypt from 'bcryptjs';
-import redis from 'redis'
+import redis from 'redis';
 
 function databaseBuilder(parameters) {
     const connection = new Sequelize(

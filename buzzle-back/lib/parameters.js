@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 dotenv.config();
 
 let dbName = process.env.BUZZLE_DB_NAME;
@@ -79,7 +79,6 @@ if (!dbSessionPass) {
 }
 
 let dbSessionPrefix = process.env.BUZZLE_SESSION_DB_PREFIX;
-
 if (!dbSessionPrefix) {
     dbSessionPrefix = null;
 }
@@ -149,7 +148,7 @@ export default {
     minLoginLength,
     minPassLength,
     adminUser,
-    adminPass,    
+    adminPass
 };
 
 

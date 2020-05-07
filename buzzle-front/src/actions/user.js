@@ -2,7 +2,7 @@ import parameters from '../parameters.js';
 import * as actions from './types.js';
 import { setError } from './error.js';
 
-export const loadUser = ()=> {
+export const loadUser = () => {
     return dispatch => {
         fetch(`${parameters.apiURL}/user`, {
             'method': 'GET',
@@ -23,7 +23,7 @@ export const loadUser = ()=> {
 };
 
 const finishLoadingUser = user => ({
-    'type': "LOAD_USER",
+    'type': actions.LOAD_USER_SUCCESS,
     user
 });
 
@@ -40,7 +40,7 @@ export const createUser = credentials => {
           .then(response => response.json())
           .then(data => {
               if (data.error) {
-                  dispatch(setError(data.error))
+                  dispatch(setError(data.error));
               } else {
                   dispatch(finishCreatingUser(data.user));
               }
@@ -50,6 +50,7 @@ export const createUser = credentials => {
           });
     };
 };
+
 const finishCreatingUser = user => ({
     'type': actions.CREATE_USER_SUCCESS,
     user
@@ -76,8 +77,9 @@ export const loginUser = credentials => {
           .catch(error => {
               dispatch(setError(`${error}`));
           });
-    };
-};
+    }
+}
+
 const finishLoginUser = user => ({
     'type': actions.LOGIN_USER_SUCCESS,
     user

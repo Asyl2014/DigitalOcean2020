@@ -1,23 +1,20 @@
 import React from 'react';
 
-import Header from '../components/Header.js';
-import Error from '../components/Error.js';
-import MessageForm from '../components/MessageForm.js';
-import Messages from '../components/Messages.js';
-import Footer from '../components/Footer.js';
+import Header from '../containers/Header.js';
+import Error from '../containers/Error.js';
+import Messages from '../containers/Messages.js';
+import Footer from '../containers/Footer.js';
+import MessageForm from '../containers/MessageForm.js';
 
-function HomePage() {
-    return (
-        <> 
-            <Header showUserToolbar={true} />
-            <main className="container">
-                <Error />
-                 <MessageForm />
-                <Messages />
-            </main>
-            <Footer />
-        </>
-    );
-}
+const HomePage = () =>
+    <>
+        <Header showUserToolbar={true} />
+        <main className="container">
+            <Error />
+            <MessageForm />
+            <Messages />
+        </main>
+        <Footer />
+    </>
 
 export default HomePage;

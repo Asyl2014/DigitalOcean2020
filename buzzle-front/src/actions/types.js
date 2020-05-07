@@ -1,4 +1,3 @@
-
 export const SET_ERROR = 'SET_ERROR';
 
 export const LOAD_MESSAGES_SUCCESS  = 'LOAD_MESSAGES_SUCCESS';
